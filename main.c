@@ -10,6 +10,11 @@
 
 //*************Main Function*******************
 int main(void){
+    
+ //Variables
+ char names[STUDENTS][11];
+int scores[STUDENTS][TESTS];
+int sums[STUDENTS];
 
     return 0;
 }
