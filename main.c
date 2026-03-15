@@ -25,6 +25,11 @@ int calculateSum(int scores[]) {
     }
     return sum;
 }
+
+// Average calculation
+double calculateAverage(int sum) {
+    return (double)sum / TESTS;
+}
 //*************Main Function*******************
 int main(void){
 
@@ -40,6 +45,8 @@ int sums[STUDENTS];
 // test the sum function
  int scores[TESTS] = {10,10,10,10,10,10,10,10,10,10,10,10,10};
     printf("%d\n", calculateSum(scores));
+// test calculating average 
+printf("%.2f\n", calculateAverage(130));
 
     return 0;
 }
