@@ -57,6 +57,7 @@ for (int i = 0; i < STUDENTS; i++) {
         if (sums[i] > sums[bestIndex]) {
         bestIndex = i;
     }
+
 }
 
 //print stutents + sum
@@ -66,6 +67,18 @@ for (int i = 0; i < STUDENTS; i++) {
 //print the name of best student
 printf("%s\n", names[bestIndex]);
 
+//calculate and group average
+double groupAverage = (double)totalSum / STUDENTS / TESTS;
+printf("%.2f\n", groupAverage);
+
+//print students' names below group average
+    for (int i = 0; i < STUDENTS; i++) {
+        double studentAverage = calculateAverage(sums[i]);
+
+        if (studentAverage < groupAverage) {
+            printf("%s %.2f\n", names[i], studentAverage);
+        }
+    }
     return 0;
 }
 
