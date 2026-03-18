@@ -34,19 +34,26 @@ double calculateAverage(int sum) {
 int main(void){
 
  //Variables
- char names[STUDENTS][11];
-// int scores[STUDENTS][TESTS];
-int sums[STUDENTS];
+    char names[STUDENTS][11];
+    int scores[STUDENTS][TESTS];
+    int sums[STUDENTS];
 
-// test the formating function
-    char name[11] = "aLICE";
-    formatName(name);
-    printf("%s\n", name);
-// test the sum function
- int scores[TESTS] = {10,10,10,10,10,10,10,10,10,10,10,10,10};
-    printf("%d\n", calculateSum(scores));
-// test calculating average 
-printf("%.2f\n", calculateAverage(130));
+    //scan and print all students and their sums
+for (int i = 0; i < STUDENTS; i++) {
+    scanf("%10s", names[i]);
+    formatName(names[i]);
+
+    for (int j = 0; j < TESTS; j++) {
+        scanf("%d", &scores[i][j]);
+    }
+
+    sums[i] = calculateSum(scores[i]);
+}
+
+//print stutents + sum
+for (int i = 0; i < STUDENTS; i++) {
+    printf("%s %d\n", names[i], sums[i]);
+}
 
     return 0;
 }
