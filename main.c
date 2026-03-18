@@ -38,6 +38,9 @@ int main(void){
     int scores[STUDENTS][TESTS];
     int sums[STUDENTS];
 
+    int totalSum = 0;
+    int bestIndex = 0;
+
     //scan and print all students and their sums
 for (int i = 0; i < STUDENTS; i++) {
     scanf("%10s", names[i]);
@@ -48,12 +51,20 @@ for (int i = 0; i < STUDENTS; i++) {
     }
 
     sums[i] = calculateSum(scores[i]);
+     totalSum += sums[i];
+
+     //compare and set best student
+        if (sums[i] > sums[bestIndex]) {
+        bestIndex = i;
+    }
 }
 
 //print stutents + sum
 for (int i = 0; i < STUDENTS; i++) {
     printf("%s %d\n", names[i], sums[i]);
 }
+//print the name of best student
+printf("%s\n", names[bestIndex]);
 
     return 0;
 }
