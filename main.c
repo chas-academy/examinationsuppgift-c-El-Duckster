@@ -6,7 +6,6 @@
 //**********Constants*****************
 #define STUDENTS 5  // # of students
 #define TESTS 13    // # of tests per students
-#define NAME_LEN 11 // Max name length (10 chars + 1 for '\0')
 
 // ************Helper Functions***************
 // name formatting
@@ -30,7 +29,7 @@ int calculateSum(int scores[])
     return sum;
 }
 
-// Average calculation
+// Average calculation per student
 double calculateAverage(int sum)
 {
     return (double)sum / TESTS;
